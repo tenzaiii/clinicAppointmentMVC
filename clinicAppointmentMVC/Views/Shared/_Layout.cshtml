@@ -12,7 +12,7 @@
     <!-- UIkit -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/css/uikit.min.css" />
     <!-- local css -->
-    <link rel="stylesheet" href="styles.css" link="styles">
+    <link rel="stylesheet" href="~/css/site.css" link="styles">
 </head>
 <body>
     <!-- Top Contact Bar -->
@@ -51,17 +51,17 @@
 
                         <!-- Main nav visible on medium+ screens -->
                         <ul class="uk-navbar-nav uk-visible@m">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="services.html">Services</a></li>
-                            <li><a href="appointment.html">Appointment</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="about.html">About</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="">Services</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="">Appointment</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="">FAQ</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="">Contact</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="">About</a></li>
                         </ul>
                     </div>
                     <div class="uk-navbar-right uk-visible@m">
                         <ul class="uk-navbar-nav">
-                            <li><a href="login.html">LOG IN</a></li>
+                            <li><a asp-area="" asp-controller="Home" asp-action="Login">LOG IN</a></li>
                         </ul>
                     </div>
                 </div>
@@ -72,14 +72,14 @@
         <div id="mobile-dropdown" class="uk-navbar-dropdown uk-navbar-dropdown-width-1 uk-hidden@m" uk-drop="mode: click; boundary: !nav; boundary-align: true; pos: bottom-justify; offset: 0;">
             <div class="uk-navbar-dropdown-grid uk-child-width-1-1 uk-grid-collapse" uk-grid>
                 <ul class="uk-nav uk-navbar-dropdown-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="appointment.html">Appointment</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="">Services</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="">Appointment</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="">FAQ</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="">About</a></li>
                     <li class="uk-nav-divider"></li>
-                    <li><a href="login.html">LOG IN</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Login">LOG IN</a></li>
                 </ul>
             </div>
         </div>
@@ -152,6 +152,6 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.13/dist/js/uikit-icons.min.js"></script>
     <!-- local js -->
-    <script src="scripts.js"></script>
+    <script src="~/js/site.js"></script>
 </body>
 </html>
