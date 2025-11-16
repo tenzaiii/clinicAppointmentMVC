@@ -1,14 +1,84 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<!-- Top Contact Bar -->
+<div class="contact-info">
+    <div class="uk-container">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-expand">
+                <span uk-icon="receiver"></span> Hotline: (02) 8988-1000
+                <span class="uk-margin-left"><span uk-icon="mail"></span> info@easyclinic.com</span>
+            </div>
+            <div class="uk-width-auto">
+                <a href="#" class="uk-margin-small-right" uk-icon="facebook"></a>
+                <a href="#" class="uk-margin-small-right" uk-icon="instagram"></a>
+                <a href="#" class="uk-margin-small-right" uk-icon="twitter"></a>
+                <a href="#" uk-icon="youtube"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    <nav class="uk-navbar-container uk-box-shadow-small">
+        <div class="uk-container">
+            <div uk-navbar>
+                <div class="uk-navbar-left">
+                    <!-- Toggle button visible on small screens only -->
+                    <a class="uk-navbar-toggle uk-hidden@m" uk-navbar-toggle-icon href="#"
+                       uk-toggle="target: #mobile-dropdown" aria-label="Toggle menu"></a>
+
+                    <a class="uk-navbar-item brand-logo" href="index.html"
+                       aria-label="Back to Home">Easy<span>Clinic</span></a>
+
+
+                    <!-- Main nav visible on medium+ screens -->
+                    <ul class="uk-navbar-nav uk-visible@m">
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Appointment">Appointment</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    </ul>
+                </div>
+                <div class="uk-navbar-right uk-visible@m">
+                    <ul class="uk-navbar-nav">
+                        <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dropdown menu (hidden by default) for mobile toggle -->
+    <div id="mobile-dropdown" class="uk-navbar-dropdown uk-navbar-dropdown-width-1 uk-hidden@m"
+         uk-drop="mode: click; boundary: !nav; boundary-align: true; pos: bottom-justify; offset: 0;">
+        <div class="uk-navbar-dropdown-grid uk-child-width-1-1 uk-grid-collapse" uk-grid>
+            <ul class="uk-nav uk-navbar-dropdown-nav">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Services">Services</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Appointment">Appointment</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+            </ul>
+        </div>
+        <div class="uk-navbar-right uk-visible@m">
+            <ul class="uk-navbar-nav">
+                <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 <!-- SLIDESHOW / HERO SECTION -->
-<div class="uk-position-relative uk-visible-toggle hero-slideshow"
-     tabindex="-1"
+<div class="uk-position-relative uk-visible-toggle hero-slideshow" tabindex="-1"
      uk-slideshow="autoplay: true; autoplay-interval: 3000; min-height: 300; max-height: 600">
     <ul class="uk-slideshow-items" uk-height-viewport="offset-top: true; offset-bottom: 20">
         <li>
-            <img src="~/img/banner_2.png" alt="Doctor with patient" uk-cover />
+            <img src="IMG/banner_2.png" alt="Doctor with patient" uk-cover />
             <div class="uk-overlay uk-position-center-left uk-text-left hero-overlay">
                 <h1 class="uk-heading-medium">Your Health, Our Priority</h1>
                 <p class="uk-text-lead">Fast, easy, and hassle-free scheduling for all your medical needs.</p>
@@ -16,7 +86,7 @@
             </div>
         </li>
         <li>
-            <img src="~/img/banner_1.png" alt="Medical professional" uk-cover />
+            <img src="IMG/banner_1.png" alt="Medical professional" uk-cover />
             <div class="uk-overlay uk-position-center-right uk-text-left hero-overlay">
                 <h1 class="uk-heading-medium">Healthy Today, Happier Tomorrow</h1>
                 <p class="uk-text-lead">A healthier future starts with one simple step — scheduling your visit.</p>
@@ -24,7 +94,7 @@
             </div>
         </li>
         <li>
-            <img src="~/img/banner_3.png" alt="Modern clinic interior" uk-cover />
+            <img src="IMG/banner_3.png" alt="Modern clinic interior" uk-cover />
             <div class="uk-overlay uk-position-center-left uk-text-left hero-overlay">
                 <h1 class="uk-heading-medium">Expert Doctors. Reliable Service.</h1>
                 <p class="uk-text-lead">Access top-tier medical experts with our seamless booking platform.</p>
@@ -32,16 +102,10 @@
             </div>
         </li>
     </ul>
-    <a class="uk-position-center-left uk-position-small uk-hidden-hover"
-       href="#"
-       uk-slidenav-previous
-       uk-slideshow-item="previous"
-       aria-label="Previous slide"></a>
-    <a class="uk-position-center-right uk-position-small uk-hidden-hover"
-       href="#"
-       uk-slidenav-next
-       uk-slideshow-item="next"
-       aria-label="Next slide"></a>
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+       uk-slideshow-item="previous" aria-label="Previous slide"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+       uk-slideshow-item="next" aria-label="Next slide"></a>
 </div>
 
 <!-- SEARCH / FIND SECTION -->
@@ -146,10 +210,7 @@
         <div class="uk-grid-match uk-child-width-1-2@m" uk-grid>
             <div>
                 <div class="uk-cover-container uk-border-rounded uk-box-shadow-medium">
-                    <img src="~/img/clinic3.png"
-                         alt="Caring for You"
-                         uk-cover
-                         class="uk-border-rounded" />
+                    <img src="IMG/clinic3.png" alt="Caring for You" class="uk-animation-reverse uk-transform-origin-top-right uk-border-rounded" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" uk-cover>
                     <canvas width="600" height="400"></canvas>
                 </div>
             </div>
@@ -159,7 +220,8 @@
                         <span>Caring for You, One Appointment at a Time</span>
                     </h3>
                     <p class="uk-text-center uk-text-lead">
-                        Our clinic is dedicated to giving you the attention and care you deserve, whenever you need it.
+                        Our clinic is dedicated to giving you the attention and care you deserve, whenever you need
+                        it.
                     </p>
                 </div>
             </div>
@@ -204,7 +266,10 @@
     <div class="uk-container">
         <div class="uk-text-center uk-margin-large-bottom">
             <h2 class="uk-heading-medium">Our Clinic Services</h2>
-            <p class="uk-text-lead">Friendly doctors, professional service, and an easy booking experience all in one place.</p>
+            <p class="uk-text-lead">
+                Friendly doctors, professional service, and an easy booking experience all in
+                one place.
+            </p>
         </div>
 
         <div class="uk-grid-match uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid>
@@ -229,7 +294,9 @@
                 <div class="uk-card uk-card-default uk-card-body uk-text-center service-card">
                     <span uk-icon="icon: users; ratio: 3.5" class="service-icon"></span>
                     <h3 class="uk-card-title uk-margin-remove-bottom">Pediatrician</h3>
-                    <p class="uk-margin-small-top">Specialized healthcare for infants, children, and adolescents.</p>
+                    <p class="uk-margin-small-top">
+                        Specialized healthcare for infants, children, and adolescents.
+                    </p>
                 </div>
             </div>
             <!-- Service Item -->
@@ -259,7 +326,8 @@
         </div>
 
         <div class="uk-text-center uk-margin-large-top">
-            <a href="services.html" class="uk-button uk-button-large" style="background-color: var(--secondary-color); color: var(--white)">View All Services</a>
+            <a href="services.html" class="uk-button uk-button-large"
+               style="background-color: var(--secondary-color); color: var(--white)">View All Services</a>
         </div>
     </div>
 </section>
@@ -270,13 +338,31 @@
         <div class="uk-grid-large uk-flex-middle" uk-grid>
             <div class="uk-width-1-2@m">
                 <h2 class="uk-heading-medium">Quality Care Made Easy</h2>
-                <p class="uk-text-large">Convenient online scheduling for fast, reliable, and comfortable clinic visits.</p>
-                <p>We understand that your time is valuable. That's why we've designed our booking system to be simple, intuitive, and available 24/7. Book your appointments anytime, anywhere.</p>
+                <p class="uk-text-large">
+                    Convenient online scheduling for fast, reliable, and comfortable clinic
+                    visits.
+                </p>
+                <p>
+                    We understand that your time is valuable. That's why we've designed our booking system to be
+                    simple, intuitive, and available 24/7. Book your appointments anytime, anywhere.
+                </p>
                 <ul class="uk-list uk-list-large">
-                    <li><span uk-icon="icon: check" class="uk-margin-small-right" style="color: var(--secondary-color)"></span> Easy online booking</li>
-                    <li><span uk-icon="icon: check" class="uk-margin-small-right" style="color: var(--secondary-color)"></span> Flexible appointment times</li>
-                    <li><span uk-icon="icon: check" class="uk-margin-small-right" style="color: var(--secondary-color)"></span> Reminder notifications</li>
-                    <li><span uk-icon="icon: check" class="uk-margin-small-right" style="color: var(--secondary-color)"></span> Secure patient portal</li>
+                    <li>
+                        <span uk-icon="icon: check" class="uk-margin-small-right"
+                              style="color: var(--secondary-color)"></span> Easy online booking
+                    </li>
+                    <li>
+                        <span uk-icon="icon: check" class="uk-margin-small-right"
+                              style="color: var(--secondary-color)"></span> Flexible appointment times
+                    </li>
+                    <li>
+                        <span uk-icon="icon: check" class="uk-margin-small-right"
+                              style="color: var(--secondary-color)"></span> Reminder notifications
+                    </li>
+                    <li>
+                        <span uk-icon="icon: check" class="uk-margin-small-right"
+                              style="color: var(--secondary-color)"></span> Secure patient portal
+                    </li>
                 </ul>
             </div>
             <div class="uk-width-1-2@m">
@@ -298,7 +384,7 @@
                 <div class="swiper-slide">
                     <div class="uk-card uk-card-default">
                         <div class="uk-card-media-top">
-                            <img src="~/img/clinic1.png" width="1800" height="1200" alt="Modern facilities">
+                            <img src="IMG/clinic1.png" width="1800" height="1200" alt="Modern facilities">
                         </div>
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">Modern Facilities</h3>
@@ -309,7 +395,7 @@
                 <div class="swiper-slide">
                     <div class="uk-card uk-card-default">
                         <div class="uk-card-media-top">
-                            <img src="~/img/clinic2.png" width="1800" height="1200" alt="Caring staff">
+                            <img src="IMG/clinic2.png" width="1800" height="1200" alt="Caring staff">
                         </div>
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">Caring Staff</h3>
@@ -320,7 +406,7 @@
                 <div class="swiper-slide">
                     <div class="uk-card uk-card-default">
                         <div class="uk-card-media-top">
-                            <img src="~/img/clinic3.png" width="1800" height="1200" alt="Advanced technology">
+                            <img src="IMG/clinic3.png" width="1800" height="1200" alt="Advanced technology">
                         </div>
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">Advanced Technology</h3>
@@ -331,7 +417,7 @@
                 <div class="swiper-slide">
                     <div class="uk-card uk-card-default">
                         <div class="uk-card-media-top">
-                            <img src="~/img/clinic4.png" width="1800" height="1200" alt="Comfortable spaces">
+                            <img src="IMG/clinic4.png" width="1800" height="1200" alt="Comfortable spaces">
                         </div>
                         <div class="uk-card-body">
                             <h3 class="uk-card-title">Comfortable Spaces</h3>
@@ -352,8 +438,71 @@
         <h2 class="uk-heading-small">Ready to Take Control of Your Health?</h2>
         <p class="uk-text-lead">Book your appointment today and experience healthcare excellence</p>
         <div class="uk-margin-large-top">
-            <a href="#" class="uk-button uk-button-default uk-button-large uk-margin-small-right" style="background-color: var(--primary-color );">Book Appointment</a>
+            <a href="#" class="uk-button uk-button-default uk-button-large uk-margin-small-right">Book Appointment</a>
             <a href="#" class="uk-button uk-button-secondary uk-button-large">Contact Us</a>
         </div>
     </div>
 </section>
+
+<!-- Footer -->
+<footer class="site-footer">
+    <div class="uk-container">
+        <div class="uk-grid-large" uk-grid>
+            <div class="uk-width-1-2@s uk-width-1-4@m">
+                <a class="uk-navbar-item brand-logo" href="index.html"
+                   aria-label="Back to Home">Easy<span>Clinic</span></a>
+                <p>
+                    Your trusted healthcare partner committed to providing world-class medical services with
+                    compassion and excellence.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="uk-margin-small-right" uk-icon="facebook"></a>
+                    <a href="#" class="uk-margin-small-right" uk-icon="instagram"></a>
+                    <a href="#" class="uk-margin-small-right" uk-icon="twitter"></a>
+                    <a href="#" uk-icon="youtube"></a>
+                </div>
+            </div>
+
+            <div class="uk-width-1-2@s uk-width-1-4@m">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Find a Doctor</a></li>
+                    <li><a href="#">Book Appointment</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Patient Portal</a></li>
+                    <li><a href="#">Health Packages</a></li>
+                </ul>
+            </div>
+
+            <div class="uk-width-1-2@s uk-width-1-4@m">
+                <h3 class="footer-heading">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Emergency Care</a></li>
+                    <li><a href="#">Surgery</a></li>
+                    <li><a href="#">Laboratory</a></li>
+                    <li><a href="#">Radiology</a></li>
+                    <li><a href="#">Pharmacy</a></li>
+                </ul>
+            </div>
+
+            <div class="uk-width-1-2@s uk-width-1-4@m">
+                <h3 class="footer-heading">Contact Info</h3>
+                <ul class="footer-links">
+                    <li><span uk-icon="icon: location"></span> 123 Healthcare Ave, Metro Manila</li>
+                    <li><span uk-icon="icon: receiver"></span> (02) 8988-1000</li>
+                    <li><span uk-icon="icon: mail"></span> info@easyclinic.com</li>
+                    <li><span uk-icon="icon: clock"></span> 24/7 Emergency Services</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>
+                &copy; 2025 EasyClinic. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">
+                    Terms of
+                    Service
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>
